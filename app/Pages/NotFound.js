@@ -7,8 +7,8 @@ class NotFound extends React.Component {
         return(
             <>
                 <h1> No existe la ruta</h1>
-                <Link to={'/'}>
-                    <h4>Volver al inicio </h4>
+                <Link to='/'>
+                    <h2>Volver al inicio </h2>
                 </Link>
 
             </>
