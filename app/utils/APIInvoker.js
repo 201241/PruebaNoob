@@ -1,7 +1,7 @@
 const configuration = require('../../configServer')
 const debug = configuration.debugMode
 
-class APIInvoker {
+class APIInvoker {//
 
     getAPIHeader(){
         return({

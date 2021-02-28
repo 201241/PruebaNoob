@@ -4,7 +4,7 @@ import SignUp from './SignUp'
 import { BrowserRouter, Switch, Router} from 'react-router-dom'
 import Home from '../Pages/Home'
 
-
+//as
 
 class App extends React.Component{
     render() {

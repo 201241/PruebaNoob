@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Hola extends React.Component {
+class Hola extends React.Component {//
 
     render(){
 

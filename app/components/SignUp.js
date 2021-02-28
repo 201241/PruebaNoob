@@ -4,7 +4,7 @@ import update from 'immutability-helper'
 
 class SignUp extends React.Component {
 
-    constructor() {
+    constructor() {//
         super()
         this.state  = {
             idRol : '1',

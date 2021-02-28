@@ -3,7 +3,7 @@ import update from 'immutability-helper'
 import APIInvoker from "../utils/APIInvoker";
 
 class Login extends React.Component{
-    constructor() {
+    constructor() {//
         super();
         this.state = {
             username:'',
