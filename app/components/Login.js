@@ -76,7 +76,7 @@ class Login extends React.Component{
                                    onChange={this.changeField.bind(this)}/>
                             <div className="label-error" ref={ self => this.pass = self}> </div>
                         </div>
-                        <button type="button" onClick={this.iniciarSesion.bind(this)} >Iniciar sesión</button>
+                        <button class="btn btn-primary" type="button" onClick={this.iniciarSesion.bind(this)} >Iniciar sesión</button>
 
                     </form>
                 </div>

@@ -158,7 +158,7 @@ class SignUp extends React.Component {
                         <label ref={self=> this.password = self}></label>
                     </div>
 
-                    <button
+                    <button class="btn btn-primary"
                         onClick={this.crearCuenta.bind(this)}>
                         Crear cuenta
                     </button>
