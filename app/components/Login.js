@@ -52,10 +52,10 @@ class Login extends React.Component{
     render() {
         return(
                 <div>
-                    <h1>Prácticas profesionales</h1>
+                    <h1>Inicio de sesión</h1>
                     <form >
                         <div>
-                            <label htmlFor="username">Nombre de usuario</label>
+                            <label htmlFor="username">Usuario</label>
                             <input type="text"
                                    name="username"
                                    id="username"

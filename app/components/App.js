@@ -4,8 +4,7 @@ import SignUp from './SignUp'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Home from '../Pages/Home'
 import NotFound from '../Pages/NotFound'
-
-//as
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component{
     render() {

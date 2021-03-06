@@ -1,5 +1,4 @@
 import React from 'react'
-
 class Hola extends React.Component {//
 
     render(){
