@@ -8,6 +8,7 @@ class Publicar extends React.Component {
     constructor() {//
         super()
         this.state  = {
+            seccion:'',
             titulo : '',
             comentario : '',
             doc : ''
@@ -29,6 +30,7 @@ class Publicar extends React.Component {
         this.messageError.innerHTML = ''
 
             let publicar = {
+                seccion: this.state.seccion,
                 titulo: this.state.titulo,
                 comentario: this.state.comentario,
                 doc: this.state.doc
@@ -49,6 +51,16 @@ class Publicar extends React.Component {
             <div>
                 <h1>Publicar nuevo</h1>
                 <form onSubmit={this.Publicar.bind(this)}>
+                    <div>
+                        <label htmlFor='seccion'>Seccion: '</label>
+                        <select name="seccion" id="seccion" value={this.state.seccion} onChange={this.changeField.bind(this)}>
+                            <option value="programacion web">Programacion web</option>
+                            <option value="base de datos">Base de datos</option>
+                            <option value="diseño">Diseño de interfaz</option>
+                            <option value="matematicas">matematicas</option>
+                        </select>
+                        <label ref={self=> this.idrRol = self}></label>
+                    </div>
                     <div>
                         <label htmlFor='titulo'>titulo</label>
                         <input type='text'
