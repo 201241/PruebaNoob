@@ -160,7 +160,7 @@ class SignUp extends React.Component {
 
                     <button class="btn btn-primary"
                         onClick={this.crearCuenta.bind(this)}>
-                        Crear cuenta
+                        Crear una cuenta
                     </button>
                     <div ref={self => this.messageError = self}></div>
                 </form>

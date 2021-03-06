@@ -5,6 +5,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Home from '../Pages/Home'
 import NotFound from '../Pages/NotFound'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Publicar from "../Pages/Publicar";
 
 class App extends React.Component{
     render() {
@@ -14,6 +15,7 @@ class App extends React.Component{
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/login' component={Login}/>
                     <Route exact path='/signUp' component={SignUp}/>
+                    <Route exact path='/publicar' component={Publicar}/>
                     <Route component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>

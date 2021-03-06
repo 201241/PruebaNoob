@@ -18,6 +18,9 @@ class Home extends React.Component {
                     <Link to='/signUp'>
                         <h3 className='text-center'>Regístrate</h3>
                     </Link>
+                    <Link to='/publicar'>
+                        <h6 className='text-center'>publicar</h6>
+                    </Link>
                 </div>
 
 
