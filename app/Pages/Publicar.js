@@ -71,16 +71,23 @@ class Publicar extends React.Component {
                                onChange={this.changeField.bind(this)}/>
                         <label ref={self=> this.titulo = self}></label>
                     </div>
-                    <div>
-                        <label htmlFor='comentario'>comentario</label>
-                        <input  type='text'
-                                id='comentario'
-                                name='comentario'
-                                placeholder='comentario'
-                                value={this.state.comentario}
-                                onChange={this.changeField.bind(this)}/>
-                        <label ref={self=> this.comentario = self}></label>
+
+                    <div className="form-floating">
+                        <textarea type='text'
+                              id='comentario'
+                              name='comentario'
+                              placeholder='comentario'
+                              value={this.state.comentario}
+                              onChange={this.changeField.bind(this)}
+                              className="form-control"
+                              placeholder="Comentario"
+                              id="comentario"
+                              rows="4" >
+                        </textarea>
+                            <label></label>
                     </div>
+
+
                     <div>
                         <label htmlFor='doc'>doc</label>
                         <input  type='text'
@@ -99,6 +106,8 @@ class Publicar extends React.Component {
                     </button>
                     <div ref={self => this.messageError = self}></div>
                 </form>
+
+
             </div>
         )
     }

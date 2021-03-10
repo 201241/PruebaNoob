@@ -6,6 +6,7 @@ import Home from '../Pages/Home'
 import NotFound from '../Pages/NotFound'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Publicar from "../Pages/Publicar";
+import ZonaWeb from "../Pages/ZonaWeb";
 
 class App extends React.Component{
     render() {
@@ -17,6 +18,7 @@ class App extends React.Component{
                     <Route exact path='/signUp' component={SignUp}/>
                     <Route exact path='/publicar' component={Publicar}/>
                     <Route exact path='/Home' component={Home}/>
+                    <Route exact path='/Zonaweb' component={ZonaWeb}/>
                     <Route component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>

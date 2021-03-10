@@ -4,6 +4,7 @@ class Home extends React.Component {
     render() {
 
         return(
+
             <>
                 <link rel="stylesheet" href="./CSS/Home.css"/>
                 <header>
@@ -11,13 +12,7 @@ class Home extends React.Component {
                         <h1 className='text-center'> Bienvenido a Noob-Emy</h1></div>
                 </header>
 
-                <div class="container">  <Link to='/login'>
-                    <h3 className='text-center'>Iniciar sesion</h3>
-                </Link>
-                    <h6 className='text-center'>¿No tienes cuenta?</h6>
-                    <Link to='/signUp'>
-                        <h3 className='text-center'>Regístrate</h3>
-                    </Link>
+                <div class="container">
                     <Link to='/publicar'>
                         <h6 className='text-center'>publicar</h6>
                     </Link>
@@ -70,7 +65,37 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </nav>
+
+
+                <body>
+
+                <div>
+                    <div className="row row-cols-1 row-cols-md-2 g-4">
+                        <div className="col">
+                            <div className="card ">
+                                <img src="..." className="card-img-top" alt="..."/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">Titulo</h5>
+                                        <p className="card-text"> Resultado de imagen para programacion web
+                                            PHP, es el más conocido y usado de los lenguajes de programación Web de servidor.
+                                            ASP y JSP, son dos lenguajes de programación Web que actualmente esta siendo muy
+                                            usados. Y MySQL, como lenguaje de programación para manejar bases de datos..</p>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                </body>
+
+
             </>
+
+
         )
     }
 }
