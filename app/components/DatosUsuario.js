@@ -10,9 +10,18 @@ class DatosUsuario extends React.Component {
             matricula : '',
             cuatrimestre: ''
         }
+
+        var userId = localStorage.getItem('idUser');
+        APIInvoker.invokeGET(`/user/getDatos/${userId}`,data=>{
+            alert(data.message)
+        }, error => {
+            alert(error.message )
+        })
+
         this.status = false
         this.usernameOk = false
     }
+
 
 
 

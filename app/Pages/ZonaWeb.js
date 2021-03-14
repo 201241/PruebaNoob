@@ -1,42 +1,47 @@
 import React from 'react'
+import Card from "../components/Card";
 import {Link} from "react-router-dom";
 import update from "immutability-helper";
 import APIInvoker from "../utils/APIInvoker";
 class ZonaWeb extends React.Component {
-
-    constructor() {
-        super();
-        this.state = {
-            titulo: '',
-            comentario:'',
-            doc:'',
-            listaPublicacion: []
-        }
+//SVG porn
+    constructor(props) {
+        super(props);
         this.listaPublicacion = []
         APIInvoker.invokeGET('publicar/getAllPublicacion',data=>{
             this.setState({
                 listaPublicacion : data.data
+                //titulo / comentario
             })
-            console.log(this.state.listaPublicacion)
         }, error=>{
+            alert( "error");
         })
-    }
 
+    }
 
     render() {
         return(
                 <>
-                    <link rel="stylesheet" href="./CSS/Home.css"/>
-                    <header>
-                        <div class="container">
-                            <h1 className='text-center'> Programacion Web</h1></div>
-                    </header>
 
-                    <div class="container">
-                        <Link to='/publicar'>
-                            <h6 className='text-center'>publicar</h6>
-                        </Link>
-                    </div>
+                     <div className="container">
+                         <For each="item" index="index" of={this.listaPublicacion}>
+                             <Card key={index} title={item.titulo} description={item.comentario}/>
+                         </For>
+                     </div>
+
+                     <link rel="stylesheet" href="./CSS/Home.css"/>
+                     <header>
+                         <div className="container">
+                             <h1 className='text-center'> Programacion Web</h1></div>
+                     </header>
+
+                     <div className="container">
+                         <Link to='/publicar'>
+                             <h6 className='text-center'>publicar</h6>
+                         </Link>
+                     </div>
+
+
 
 
 
@@ -86,10 +91,15 @@ class ZonaWeb extends React.Component {
                         </div>
                     </nav>
 
-
                     <body>
 
-                    <div>
+                    <div className="container">
+                        <For each="item" index="index" of={this.listaPublicacion}>
+                            <Card key={index} title={item.titulo} description={item.comentario}/>
+                        </For>
+                    </div>
+
+{/*                    <div>
                         <div className="row row-cols-1 row-cols-md-2 g-4">
                             <div className="col">
                                 <div className="card ">
@@ -105,9 +115,7 @@ class ZonaWeb extends React.Component {
                             </div>
 
                         </div>
-                    </div>
-
-
+                    </div>*/}
 
 
                     </body>

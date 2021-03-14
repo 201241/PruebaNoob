@@ -7,6 +7,7 @@ import NotFound from '../Pages/NotFound'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Publicar from "../Pages/Publicar";
 import ZonaWeb from "../Pages/ZonaWeb";
+import DatosUsuario from "./DatosUsuario";
 
 class App extends React.Component{
     render() {
@@ -19,6 +20,7 @@ class App extends React.Component{
                     <Route exact path='/publicar' component={Publicar}/>
                     <Route exact path='/Home' component={Home}/>
                     <Route exact path='/Zonaweb' component={ZonaWeb}/>
+                    <Route exact path='/DatosUsers' component={DatosUsuario}/>
                     <Route component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>
