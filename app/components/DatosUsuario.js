@@ -23,9 +23,6 @@ class DatosUsuario extends React.Component {
     }
 
 
-
-
-
     render() {
 
         return(
