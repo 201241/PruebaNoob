@@ -1,0 +1,59 @@
+.prueba
+{
+    border-color: white;
+}
+
+.lblusuario
+{
+    color: slategrey;
+    font-family: "Candara";
+    font-style: italic;
+    position: absolute;
+    left: 650px;
+    bottom: 460px;
+    font-size: 18px;
+}
+
+.inuser
+{
+    text-align: center;
+    border-color: dimgrey ;
+    width: 20%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.inuser:focus
+{
+    outline: none;
+    border-color: dodgerblue;
+}
+
+.lblpass
+{
+    color: slategrey;
+    font-family: "Candara";
+    font-style: italic;
+    position: absolute;
+    left: 640px;
+    bottom: 335px;
+    font-size: 18px;
+}
+
+.inpass
+{
+    text-align: center;
+    border-color: dimgrey ;
+    width: 20%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.inpass:focus
+{
+    outline: none;
+    border-color: dodgerblue;
+}

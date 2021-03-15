@@ -1,6 +1,7 @@
 import React from 'react'
 import update from 'immutability-helper'
 import APIInvoker from "../utils/APIInvoker";
+import {Link} from "react-router-dom";
 
 class Login extends React.Component{
     constructor() {//
@@ -31,7 +32,7 @@ class Login extends React.Component{
             },
             error => {
                 //let label = document.getElementById('usernameMessage')
-                this.label.innerHTML = 'La cuenta de usuario no existe'
+                this.label.innerHTML = 'Cuenta inexistente'
             })
     }
 
@@ -53,33 +54,47 @@ class Login extends React.Component{
 
     render() {
         return(
-                <div>
-                    <h1>Inicio de sesión</h1>
+                <div class="container-fluid text-center">
+                    <link rel="stylesheet" href="./CSS/Login.css"/>
+                    <div class="modal-dialog">
+                        <div class="col-sm-12">
+                            <div class="modal-content prueba">
+                                <div class="col-12">
+                                    <img src="./Imagenes/3.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br/><br/>
+
                     <form >
-                        <div>
-                            <label htmlFor="username">Usuario</label>
-                            <input type="text"
+                        <div class="container-fluid form-group">
+                            <label class="label lblusuario">Usuario</label>
+                            <input type="text" class="inuser "
                                    name="username"
                                    id="username"
-                                   placeholder="alilopez"
+                                   placeholder=""
                                    value={this.state.username}
                                    onChange={this.changeField.bind(this)}
                                    onBlur={this.usernameValidate.bind(this)}/>
                             <div className="label-error" ref={ self => this.label = self}></div>
                         </div>
-
-                        <div>
-                            <label htmlFor="password">Contraseña</label>
-                            <input type="password"
+                        <br/>
+                        <div class="container-fluid form-group">
+                            <label class="label lblpass">Contraseña</label><br/><br/>
+                            <input type="password" class="inpass"
                                    name="password"
                                    id="password"
-                                   placeholder="1234"
+                                   placeholder=""
                                    value={this.state.password}
                                    onChange={this.changeField.bind(this)}/>
                             <div className="label-error" ref={ self => this.pass = self}> </div>
-                        </div>
-                        <button class="btn btn-primary" type="button" onClick={this.iniciarSesion.bind(this)} >Iniciar sesión</button>
+                        </div><br/><br/>
+                        <button  type="button" class="btn btn-outline-info" onClick={this.iniciarSesion.bind(this)} >Iniciar sesión</button>
+                        <br/><br/><br/><h6>¿No tienes cuenta?</h6><br/>
 
+                        <Link to='/signup'>
+                            <button type="button " className="btn btn-outline-primary" >Regístrate</button>
+                        </Link>
                     </form>
                 </div>
         )

@@ -11,6 +11,8 @@ class SignUp extends React.Component {
             nombre : '',
             apellidoPaterno : '',
             username : '',
+            matricula: '',
+            cuatrimestre: '',
             password : ''
         }
         this.status = false
@@ -49,6 +51,8 @@ class SignUp extends React.Component {
                 nombre: this.state.nombre,
                 apellidoPaterno: this.state.apellidoPaterno,
                 username: this.state.username,
+                matricula: this.state.matricula,
+                cuatrimestre: this.state.cuatrimestre,
                 password: this.state.password
             }
 
@@ -103,65 +107,79 @@ class SignUp extends React.Component {
 
     render(){
         return (
-            <div>
-                <h1>Registro de usuarios</h1>
+            <div class="container-fluid text-center">
+                <div>
+                    <link rel="stylesheet" href="./CSS/Signup.css"/>
+                        <div>
+                            <img src="./Imagenes/3.png" class="float-left img"/>
+                        </div>
+                </div><br/><br/><br/>
+                <h1>Registro de usuario</h1><br/><br/>
                 <form onSubmit={this.crearCuenta.bind(this)}>
-                    <div>
-                        <label htmlFor='idRol'>Tipo de usuario</label>
-                        <select name="idRol" id="idRol" value={this.state.idRol} onChange={this.changeField.bind(this)}>
-                            <option value="1">Alumno</option>
-                            <option value="2">Director</option>
-                            <option value="3">Asesor Académico</option>
-                        </select>
-                        <label ref={self=> this.idrRol = self}></label>
-                    </div>
-                    <div>
-                        <label htmlFor='nombre'>Nombre</label>
-                        <input type='text'
+                    <div class="container-fluid form-group">
+                        <input type='text' class="inombre"
                                id='nombre'
                                name='nombre'
-                               placeholder='Alí Santiago'
+                               placeholder='Nombre'
                                value={this.state.nombre}
                                onChange={this.changeField.bind(this)}/>
                         <label ref={self=> this.nombre = self}></label>
-                    </div>
-                    <div>
-                        <label htmlFor='apellidoPaterno'>Apellido paterno</label>
-                        <input  type='text'
+                    </div><br/>
+                    <div class="container-fluid form-group">
+                        <input  type='text' class="inapellido"
                                 id='apellidoPaterno'
                                 name='apellidoPaterno'
-                                placeholder='López'
+                                placeholder='Apellidos'
                                 value={this.state.apellidoPaterno}
                                 onChange={this.changeField.bind(this)}/>
                         <label ref={self=> this.apellidoPaterno = self}></label>
-                    </div>
-                    <div>
-                        <label htmlFor='username'>Nombre de usuario</label>
-                        <input  type='text'
+                    </div><br/>
+                    <div class="container-fluid form-group">
+                        <input  type='text' class="incorreo"
                                 id='username'
                                 name='username'
-                                placeholder='alilopez'
+                                placeholder='Dirección de correo'
                                 value={this.state.username}
                                 ref={self => this.inputUsername = self}
                                 onChange={this.changeField.bind(this)}
                                 onBlur={this.validateUsername.bind(this)}/>
                         <label ref={self=> this.username = self}></label>
+                    </div><br/>
+                    <div class="container-fluid form-group">
+                        <input type='text' className="inmatricula"
+                               id='matricula'
+                               name='matricula'
+                               placeholder='Matrícula'
+                               value={this.state.matricula}
+                               onChange={this.changeField.bind(this)}/>
+                        <label ref={self=> this.matricula = self}></label>
+                    </div><br/>
+                    <div className="container-fluid form-group">
+                        <input type='text' className="incuatri"
+                               id='cuatrimestre'
+                               name='cuatrimestre'
+                               placeholder='Cuatrimestre'
+                               value={this.state.cuatrimestre}
+                               onChange={this.changeField.bind(this)}/>
+                        <label ref={self=> this.cuatrimestre = self}></label>
                     </div>
-                    <div>
-                        <label htmlFor='password'>Contraseña</label>
-                        <input  type='password'
+                    <br/>
+                    <div class="container-fluid form-group">
+                        <input  type='password' class="incontra"
                                 id='password'
                                 name='password'
-                                placeholder='LgfclR3c0rd4r'
+                                placeholder='Contraseña'
                                 value={this.state.password}
                                 onChange={this.changeField.bind(this)}/>
                         <label ref={self=> this.password = self}></label>
                     </div>
+                    <div >
+                        <button type="button" className="btn btn-outline-info"
+                                onClick={this.crearCuenta.bind(this)}>
+                            Crear cuenta
+                        </button>
+                    </div><br/>
 
-                    <button class="btn btn-primary"
-                        onClick={this.crearCuenta.bind(this)}>
-                        Crear una cuenta
-                    </button>
                     <div ref={self => this.messageError = self}></div>
                 </form>
             </div>

@@ -18,10 +18,6 @@ class Home extends React.Component {
                     </Link>
                 </div>
 
-
-
-
-                <button type="button" className="btn btn-warning">Warning</button>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">Navbar</a>

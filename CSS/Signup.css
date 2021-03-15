@@ -1,0 +1,121 @@
+h1
+{
+    color: slategrey;
+}
+
+.inombre
+{
+    text-align: center;
+    border-color: darkgray;
+    width: 25%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+.inombre:focus
+{
+    outline: none;
+    border-color: deepskyblue;
+}
+
+.inapellido
+{
+    text-align: center;
+    border-color: darkgray ;
+    width: 25%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.inapellido:focus
+{
+    outline: none;
+    border-color: deepskyblue;
+}
+
+.incorreo
+{
+    text-align: center;
+    border-color: darkgray ;
+    width: 25%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.incorreo:focus
+{
+    outline: none;
+    border-color: deepskyblue;
+    box-shadow: none;
+}
+
+.incontra
+{
+    text-align: center;
+    border-color: darkgray ;
+    width: 25%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.incontra:focus
+{
+    outline: none;
+    border-color: greenyellow;
+    box-shadow: none;
+}
+
+
+
+.inmatricula
+{
+    text-align: center;
+    border-color: darkgray ;
+    width: 25%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.inmatricula:focus
+{
+    outline: none;
+    border-color: deepskyblue;
+    box-shadow: none;
+}
+
+.incuatri
+{
+    text-align: center;
+    border-color: darkgray ;
+    width: 25%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.incuatri:focus
+{
+    outline: none;
+    border-color: deepskyblue;
+    box-shadow: none;
+}
+
+.img
+{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    max-height: 250px;
+    max-width: 250px;
+}

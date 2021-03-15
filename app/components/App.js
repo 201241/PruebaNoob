@@ -28,7 +28,6 @@ class App extends React.Component{
             )
     }
 }
-
 /*
 <BrowserRouter>
               <Switch>
@@ -38,5 +37,4 @@ class App extends React.Component{
               </Switch>
           </BrowserRouter>
  */
-
 export default App;
