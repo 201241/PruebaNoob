@@ -109,12 +109,12 @@ class Publicar extends React.Component {
                             <div className="col-12 text-center">
                                 <h1>Realiza una publicación</h1><br/><br/>
                                 <div>
-                                    <input type='text' className="text-center titulo "
+                                    <input type='text' className="text-center titulo"
                                            id='titulo'
                                            name='titulo'
                                            placeholder='Añade un título'
                                            value={this.state.titulo}
-                                           onChange={this.changeField.bind(this)}/>
+                                           onChange={this.changeField_.bind(this)}/>
                                     <label ref={self => this.titulo = self}></label>
                                 </div><br/><br/>
                                 <form onSubmit={this.Publicar.bind(this)}>
