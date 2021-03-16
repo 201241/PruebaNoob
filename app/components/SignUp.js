@@ -7,12 +7,9 @@ class SignUp extends React.Component {
     constructor() {//
         super()
         this.state  = {
-            idRol : '1',
             nombre : '',
             apellidoPaterno : '',
             username : '',
-            matricula: '',
-            cuatrimestre: '',
             password : ''
         }
         this.status = false
