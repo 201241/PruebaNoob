@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import APIInvoker from "../utils/APIInvoker";
 class DatosUsuario extends React.Component {
 
     constructor() {//
@@ -12,10 +13,31 @@ class DatosUsuario extends React.Component {
 
         var userId = localStorage.getItem('idUser');
 
+        this.iniciarDatos()
+
         this.status = false
         this.usernameOk = false
     }
 
+    iniciarDatos(){
+        let idUser = window.localStorage.getItem("idUser");
+        if (idUser) {
+            APIInvoker.invokeGET(`/users/getDatos/${idUser}`,data => {
+                this.username.innerHTML = '* datos no se pudieron cargar'
+                this.usernameOk = false
+                console.log(data.nombre)
+                alert(data.nombre)
+            }, error => {
+                this.username.innerHTML = '* datos llistos'
+                this.usernameOk =  true
+            })
+        } else
+            this.usernameOk = false
+    }
+
+    actualizarDatos(){
+
+    }
 
     render() {
 
