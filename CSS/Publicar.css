@@ -1,0 +1,38 @@
+.hola
+{
+    color: white;
+}
+h1
+{
+    color: slategrey;
+    font-size: 30px;
+}
+
+.seccion
+{
+    width: 45%;
+}
+
+.titulo
+{
+    text-align: center;
+    border-color: darkgray ;
+    width: 50%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.titulo:focus
+{
+    outline: none;
+    border-color: dodgerblue;
+}
+
+.buscar
+{
+    text-align: left;
+    width: 60%;
+}
+

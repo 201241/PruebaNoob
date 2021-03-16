@@ -1,0 +1,76 @@
+.info
+{
+    color: slategrey;
+    font-size: 35px;
+}
+
+.edit
+{
+    color: cornflowerblue;
+}
+
+.inpnombre
+{
+    border-color: slategrey;
+    width: 80%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+.inpnombre:focus
+{
+    box-shadow: none;
+    outline: none;
+    border-color: deepskyblue;
+}
+
+.inpape
+{
+    border-color: slategrey;
+    width: 80%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.inpape:focus
+{
+    box-shadow: none;
+    outline: none;
+    border-color: deepskyblue;
+}
+
+.inpcorreo
+{
+    border-color: slategrey;
+    width: 80%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.inpcorreo:focus
+{
+    box-shadow: none;
+    outline: none;
+    border-color: deepskyblue;
+}
+
+.inpcontra
+{
+    border-color: slategrey;
+    width: 80%;
+    border-width: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+.inpcontra:focus
+{
+    box-shadow: none;
+    outline: none;
+    border-color: deepskyblue;
+}

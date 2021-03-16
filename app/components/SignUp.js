@@ -114,7 +114,7 @@ class SignUp extends React.Component {
                 <h1>Registro de usuario</h1><br/><br/>
                 <form onSubmit={this.crearCuenta.bind(this)}>
                     <div class="container-fluid form-group">
-                        <input type='text' class="inombre"
+                        <input type='text' className="inombre"
                                id='nombre'
                                name='nombre'
                                placeholder='Nombre'
