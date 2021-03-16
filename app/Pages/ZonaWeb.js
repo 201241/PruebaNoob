@@ -25,21 +25,22 @@ class ZonaWeb extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lista : []
+            lista : [],
+            Jsonlista:[]
         }
+
     }
 
     componentDidMount() {
-        alert("entra casi aqui")
         APIInvoker.invokeGET("/publicar/getAllPublicacion", data => {
-            alert("entra casi casi aqui")
+
             this.setState({
-                lista: data.titulo
+                lista: data.body
             })
-            alert("entra casi casi casiiiii aqui")
-            alert(this.state.lista)
+
+            console.log(this.state.lista + "<__ Lista")
         }, error=>{
-            alert( "error");
+
         })
     }
 
@@ -59,9 +60,15 @@ class ZonaWeb extends React.Component {
                 <div>
                     <h1> web</h1>
 
-                    <ul> {this.state.lista.map(item => {
-                        return <div><li>{item} </li>  </div> })}
-                    </ul>
+                    <div className="container">
+                        <For each="item" index="index" of={this.state.lista} >
+                            <Card key={index} title={item.titulo} description={item.comentario}/>
+                        </For>
+                    </div>
+
+{/*                    <ul> {this.state.lista.map(item => {
+                        return <div><li key={item}>{item.titulo} </li>  </div> })}
+                    </ul>*/}
                 </div>
 
         )

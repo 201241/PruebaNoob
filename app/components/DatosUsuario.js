@@ -11,7 +11,6 @@ class DatosUsuario extends React.Component {
             username : ''
         }
 
-        var userId = localStorage.getItem('idUser');
 
         this.iniciarDatos()
 
@@ -20,8 +19,18 @@ class DatosUsuario extends React.Component {
     }
 
     iniciarDatos(){
+
         let idUser = window.localStorage.getItem("idUser");
-        if (idUser) {
+        alert("si llega")
+        APIInvoker.invokeGET(`/users/getDatos/${idUser}`,data => {
+            alert("si llega")
+            console.log(data.nombre)
+            alert(data.nombre)
+        }, error => {
+            alert("si llega no sirve")
+        })
+
+/*        if (idUser) {
             APIInvoker.invokeGET(`/users/getDatos/${idUser}`,data => {
                 this.username.innerHTML = '* datos no se pudieron cargar'
                 this.usernameOk = false
@@ -32,7 +41,7 @@ class DatosUsuario extends React.Component {
                 this.usernameOk =  true
             })
         } else
-            this.usernameOk = false
+            this.usernameOk = false*/
     }
 
     actualizarDatos(){
