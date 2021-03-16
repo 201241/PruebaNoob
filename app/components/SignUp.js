@@ -44,24 +44,24 @@ class SignUp extends React.Component {
 
     crearCuenta(e){
         this.messageError.innerHTML = ''
-        this.validarCampos()
-        if (this.status && this.usernameOk) {
-            let user = {
-                idRol: this.state.idRol,
-                nombre: this.state.nombre,
-                apellidoPaterno: this.state.apellidoPaterno,
-                username: this.state.username,
-                matricula: this.state.matricula,
-                cuatrimestre: this.state.cuatrimestre,
-                password: this.state.password
-            }
+        //this.validarCampos()
 
-            APIInvoker.invokePOST('/users/signup',user,data=>{
-                alert(data.message)
-                this.usernameOk = false
-            }, error => {
-                alert(error.message + error.error)
-            })
+        let user = {
+            nombre: this.state.nombre,
+            apellidoPaterno: this.state.apellidoPaterno,
+            username: this.state.username,
+            password: this.state.password
+        }
+        console.log(user + "<==")
+        APIInvoker.invokePOST('/users/signup',user,data=>{
+            alert(data.message)
+            this.usernameOk = false
+        }, error => {
+            alert(error.message + error.error)
+        })
+
+        if (this.status && this.usernameOk) {
+
         } else
             this.messageError.innerHTML = 'Los campos marcados con * son obligatorios'
         e.preventDefault()
@@ -145,24 +145,7 @@ class SignUp extends React.Component {
                                 onBlur={this.validateUsername.bind(this)}/>
                         <label ref={self=> this.username = self}></label>
                     </div><br/>
-                    <div class="container-fluid form-group">
-                        <input type='text' className="inmatricula"
-                               id='matricula'
-                               name='matricula'
-                               placeholder='Matrícula'
-                               value={this.state.matricula}
-                               onChange={this.changeField.bind(this)}/>
-                        <label ref={self=> this.matricula = self}></label>
-                    </div><br/>
-                    <div className="container-fluid form-group">
-                        <input type='text' className="incuatri"
-                               id='cuatrimestre'
-                               name='cuatrimestre'
-                               placeholder='Cuatrimestre'
-                               value={this.state.cuatrimestre}
-                               onChange={this.changeField.bind(this)}/>
-                        <label ref={self=> this.cuatrimestre = self}></label>
-                    </div>
+
                     <br/>
                     <div class="container-fluid form-group">
                         <input  type='password' class="incontra"

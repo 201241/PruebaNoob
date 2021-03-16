@@ -74,41 +74,6 @@ h1
 
 
 
-.inmatricula
-{
-    text-align: center;
-    border-color: darkgray ;
-    width: 25%;
-    border-width: 0 0 2px 0;
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 400;
-}
-
-.inmatricula:focus
-{
-    outline: none;
-    border-color: deepskyblue;
-    box-shadow: none;
-}
-
-.incuatri
-{
-    text-align: center;
-    border-color: darkgray ;
-    width: 25%;
-    border-width: 0 0 2px 0;
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 400;
-}
-
-.incuatri:focus
-{
-    outline: none;
-    border-color: deepskyblue;
-    box-shadow: none;
-}
 
 .img
 {

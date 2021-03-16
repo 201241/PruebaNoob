@@ -7,17 +7,20 @@ class DatosUsuario extends React.Component {
         this.state  = {
             nombre : '',
             apellido : '',
-            matricula : '',
-            cuatrimestre: ''
+            username : ''
         }
 
         var userId = localStorage.getItem('idUser');
         APIInvoker.invokeGET(`/user/getDatos/${userId}`,data=>{
-            alert(data.message)
+            this.setState({
+                nombre : data.nombre,
+                apellido : data.apellidoPaterno,
+                username : data.username
+            })
+            alert(data.datos)
         }, error => {
             alert(error.message )
         })
-
         this.status = false
         this.usernameOk = false
     }
@@ -27,6 +30,7 @@ class DatosUsuario extends React.Component {
 
         return(
             <>
+                hola
             </>
 
         )

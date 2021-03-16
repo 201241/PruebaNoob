@@ -8,22 +8,32 @@ class Publicar extends React.Component {
     constructor() {//
         super()
         this.state  = {
-            seccion:'',
+            seccion:'programacion web',
             titulo : '',
             comentario : '',
             doc : ''
         }
         this.status = false
         this.usernameOk = false
+
+
     }
 
     changeField(e) {
+        this.setState({
+            seccion: e.target.value
+
+        })
+    }
+
+    changeField_(e){
         let field = e.target.name
         let value = e.target.value
 
         this.setState(update(this.state,{
             [field] : {$set : value}
         }))
+
     }
 
     Publicar(e){
@@ -59,6 +69,7 @@ class Publicar extends React.Component {
                             <option value="diseño">Diseño de interfaz</option>
                             <option value="matematicas">matematicas</option>
                         </select>
+
                         <label ref={self=> this.idrRol = self}></label>
                     </div>
                     <div>
@@ -68,7 +79,7 @@ class Publicar extends React.Component {
                                name='titulo'
                                placeholder='titulo'
                                value={this.state.titulo}
-                               onChange={this.changeField.bind(this)}/>
+                               onChange={this.changeField_.bind(this)}/>
                         <label ref={self=> this.titulo = self}></label>
                     </div>
 
@@ -78,7 +89,7 @@ class Publicar extends React.Component {
                               name='comentario'
                               placeholder='comentario'
                               value={this.state.comentario}
-                              onChange={this.changeField.bind(this)}
+                              onChange={this.changeField_.bind(this)}
                               className="form-control"
                               placeholder="Comentario"
                               id="comentario"
@@ -95,7 +106,7 @@ class Publicar extends React.Component {
                                 name='doc'
                                 placeholder='doc'
                                 value={this.state.doc}
-                                onChange={this.changeField.bind(this)}
+                                onChange={this.changeField_.bind(this)}
                         />
                         <label ref={self=> this.username = self}></label>
                     </div>

@@ -37,12 +37,14 @@ class Login extends React.Component{
     }
 
     iniciarSesion(e){
+        console.log("iniciar");
         let user = {
             username: this.state.username,
             password: this.state.password
         }
 
         APIInvoker.invokePOST('/users/login',user,data => {
+            console.log("llego aqui");
             alert(JSON.stringify(data))
             window.localStorage.setItem('token',data.token)
             window.localStorage.setItem('idUser',data.idUser)
@@ -54,12 +56,12 @@ class Login extends React.Component{
 
     render() {
         return(
-                <div class="container-fluid text-center">
+                <div className="container-fluid text-center">
                     <link rel="stylesheet" href="./CSS/Login.css"/>
-                    <div class="modal-dialog">
-                        <div class="col-sm-12">
-                            <div class="modal-content prueba">
-                                <div class="col-12">
+                    <div className="modal-dialog">
+                        <div className="col-sm-12">
+                            <div className="modal-content prueba">
+                                <div className="col-12">
                                     <img src="./Imagenes/3.png"/>
                                 </div>
                             </div>
@@ -67,8 +69,8 @@ class Login extends React.Component{
                     </div><br/><br/>
 
                     <form >
-                        <div class="container-fluid form-group">
-                            <label class="label lblusuario">Usuario</label>
+                        <div className="container-fluid form-group">
+                            <label className="label lblusuario">Usuario</label>
                             <input type="text" class="inuser "
                                    name="username"
                                    id="username"
@@ -79,9 +81,9 @@ class Login extends React.Component{
                             <div className="label-error" ref={ self => this.label = self}></div>
                         </div>
                         <br/>
-                        <div class="container-fluid form-group">
-                            <label class="label lblpass">Contraseña</label><br/><br/>
-                            <input type="password" class="inpass"
+                        <div className="container-fluid form-group">
+                            <label className="label lblpass">Contraseña</label><br/><br/>
+                            <input type="password" className="inpass"
                                    name="password"
                                    id="password"
                                    placeholder=""
@@ -89,7 +91,7 @@ class Login extends React.Component{
                                    onChange={this.changeField.bind(this)}/>
                             <div className="label-error" ref={ self => this.pass = self}> </div>
                         </div><br/><br/>
-                        <button  type="button" class="btn btn-outline-info" onClick={this.iniciarSesion.bind(this)} >Iniciar sesión</button>
+                        <button  type="button" className="btn btn-outline-info" onClick={this.iniciarSesion.bind(this)} >Iniciar sesión</button>
                         <br/><br/><br/><h6>¿No tienes cuenta?</h6><br/>
 
                         <Link to='/signup'>
