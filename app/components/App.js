@@ -11,6 +11,7 @@ import DatosUsuario from "./DatosUsuario";
 
 class App extends React.Component{
     render() {
+
         return (
             <BrowserRouter>
                 <Switch>
@@ -20,7 +21,7 @@ class App extends React.Component{
                     <Route exact path='/publicar' component={Publicar}/>
                     <Route exact path='/Home' component={Home}/>
                     <Route exact path='/Zonaweb' component={ZonaWeb}/>
-                    <Route exact path='/DatosUsers' component={DatosUsuario}/>
+                    <Route exact path='/DatosUsuario' component={DatosUsuario}/>
                     <Route component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>
