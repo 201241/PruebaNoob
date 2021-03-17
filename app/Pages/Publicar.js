@@ -10,7 +10,7 @@ class Publicar extends React.Component {
     constructor() {//
         super()
         this.state  = {
-            seccion:'programacion web',
+            seccion:'',
             titulo : '',
             comentario : '',
             doc : ''
@@ -129,6 +129,7 @@ class Publicar extends React.Component {
                                     <div>
                                         <select class="custom-select seccion"  name="seccion" id="seccion" value={this.state.seccion} onChange={this.changeField.bind(this)}>
                                             <option selected>Elige una sección</option>
+                                            <option value="programacion web">programacion web</option>
                                             <option value="base de datos">Base de Datos</option>
                                             <option value="diseño">Diseño de interfaces</option>
                                             <option value="matematicas">Matemáticas</option>
