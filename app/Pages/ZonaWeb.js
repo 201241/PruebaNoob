@@ -33,6 +33,7 @@ class ZonaWeb extends React.Component {
         return(
 
                 <div className="container-fluid">
+
                     <link rel="stylesheet" href="./CSS/Web.css"/>
                     <header>
                         <nav className="navbar navbar-expand-lg  navbar-dark bg-dark  fixed-top">
@@ -91,7 +92,9 @@ class ZonaWeb extends React.Component {
                             </div>
                         </div>
                     </nav>
-
+                    <For each="item" index="index" of={this.state.lista} >
+                        <Card key={index} title={item.titulo} description={item.comentario}/>
+                    </For>
                     </body>
 
                 </div>
