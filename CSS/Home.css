@@ -2,8 +2,23 @@ h1
 {
     color: azure;
 }
+body
+{
+
+}
 
 .informacion
 {
     color: white;
+}
+
+.c1
+{
+
+    background-color: lavender;
+}
+
+.c2
+{
+    background-color: lavenderblush;
 }

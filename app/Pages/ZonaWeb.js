@@ -31,14 +31,68 @@ class ZonaWeb extends React.Component {
 
     render() {
         return(
-                <div>
-                    <h1> web</h1>
 
-                    <div className="container">
-                        <For each="item" index="index" of={this.state.lista} >
-                            <Card key={index} title={item.titulo} description={item.comentario}/>
-                        </For>
-                    </div>
+                <div className="container-fluid">
+                    <link rel="stylesheet" href="./CSS/Web.css"/>
+                    <header>
+                        <nav className="navbar navbar-expand-lg  navbar-dark bg-dark  fixed-top">
+                            <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div className="collapse navbar-collapse" >
+                                <ul className="navbar-nav mr-auto">
+                                    <li className="nav-item active">
+                                        <a className="nav-link" href="#">Programación Web<span className="sr-only">(current)</span></a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Temas</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Títulos</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Libros</a>
+                                    </li>
+
+                                </ul>
+                                <form className="form-inline my-2 my-lg-0">
+                                    <div  viewBox="0 0 0 16">
+                                        <Link to='/publicar'>
+                                            <button type="button" className="btn btn-outline-light">Publicar</button>
+                                        </Link>
+                                    </div><p>"</p>
+
+                                    <button  className="btn btn-outline-light my-2 my-sm-0" type="submit">Mi contenido</button> <p>"</p>
+                                    <Link to='/DatosUsuario' data-bs-toggle="tooltip" data-bs-placement="top" title="Mis datos">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                             className="bi bi-person-circle informacion" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                        </svg>
+                                    </Link>
+
+                                </form>
+                            </div>
+                        </nav>
+                    </header><br/><br/>
+                    <body>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light float-right shadow-none p-3 mb-5 bg-light rounded ">
+                        <div className="container-fluid ">
+                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                <form className="d-flex ">
+                                    <input className="form-control me-2 busqueda" type="search" placeholder="Escribe aquí"
+                                           aria-label="Search"/>
+                                        <button className="btn btn-outline-success" type="submit">Buscar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    </body>
 
                 </div>
 

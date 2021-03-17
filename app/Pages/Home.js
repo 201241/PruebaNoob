@@ -4,7 +4,6 @@ class Home extends React.Component {
     render() {
 
         return(
-
             <>
                 <link rel="stylesheet" href="./CSS/Home.css"/>
                 <div className="container-fluid text-center">
@@ -60,40 +59,43 @@ class Home extends React.Component {
                 <body>
                 <div>
                 </div>
-                <div className="row row-cols-2 row-cols-md-2 g-4">
+                <div className="row row-cols-1 row-cols-md-2 g-4">
                     <div className="col">
-                        <div className="card">
+                        <div className="card c1">
                             <img src="./Imagenes/Web.png" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Programación Web</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a
-                                        natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div className="card-body container-fluid">
+                                    <Link to='/zonaweb'>
+                                        <h5 className="card-title">Programación Web</h5>
+                                    </Link>
+                                    <p className="card-text">La sección para programación web, está diseñada para brindarte recursos que puedas necesitar a lo largo de tu cuatrimestre. </p>
                                 </div>
                         </div>
                     </div>
                     <div className="col">
-                        <div className="card">
+                        <div className="card c2">
                             <img src="./Imagenes/BD.jpg" className="card-img-top" alt="..."/>
                                 <div className="card-body">
-                                    <h5 className="card-title">Base de Datos</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a
-                                        natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <Link to='/ZonaBaseDeDatos'>
+                                        <h5 className="card-title">Base de Datos</h5>
+                                    </Link>
+
+                                    <p className="card-text">Esta sección está hecha para que encuentres libros, referencias, ejemplos, etc. Acerca de base de datos.</p>
                                 </div>
                         </div>
-                    </div>
-                    <div className="col">
+                    </div><br/>
+                    <div className="col"><br/><br/>
                         <div className="card">
-                            <img src="..." className="card-img-top" alt="..."/>
+                            <img src="./Imagenes/DI.jpg" className="card-img-top" alt="..."/>
                                 <div className="card-body">
-                                    <h5 className="card-title">Diseño de interfaces</h5>
+                                        <h5 className="card-title">Diseño de interfaces</h5>
                                     <p className="card-text">This is a longer card with supporting text below as a
                                         natural lead-in to additional content.</p>
                                 </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col"><br/><br/>
                         <div className="card">
-                            <img src="..." className="card-img-top" alt="..."/>
+                            <img src="./Imagenes/Mate.jpg" className="card-img-top" alt="..."/>
                                 <div className="card-body">
                                     <h5 className="card-title">Matemáticas</h5>
                                     <p className="card-text">This is a longer card with supporting text below as a
@@ -103,11 +105,8 @@ class Home extends React.Component {
                     </div>
                 </div>
                 </body>
-
-
+                <br/>
             </>
-
-
         )
     }
 }
