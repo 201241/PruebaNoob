@@ -21,31 +21,36 @@ class DatosUsuario extends React.Component {
     iniciarDatos(){
 
         let idUser = window.localStorage.getItem("idUser");
-        alert("si llega")
-        APIInvoker.invokeGET(`/users/getDatos/${idUser}`,data => {
-            alert("si llega")
-            console.log(data.nombre)
-            alert(data.nombre)
+        alert("si al metodo")
+        APIInvoker.invokeGET(`/users/getDatos/${idUser}`,(data) => {
+            this.setState({
+                nombre: data.body.nombre,
+                apellido: data.body.apellidoPaterno,
+                username: data.body.username
+            })
         }, error => {
             alert("si llega no sirve")
+            alert(data.body)
         })
 
-/*        if (idUser) {
-            APIInvoker.invokeGET(`/users/getDatos/${idUser}`,data => {
-                this.username.innerHTML = '* datos no se pudieron cargar'
-                this.usernameOk = false
-                console.log(data.nombre)
-                alert(data.nombre)
-            }, error => {
-                this.username.innerHTML = '* datos llistos'
-                this.usernameOk =  true
-            })
-        } else
-            this.usernameOk = false*/
     }
 
     actualizarDatos(){
+        let idUser_ = window.localStorage.getItem("idUser");
+        let userUpDate = {
+            idUser: idUser_,
+            nombre: this.state.nombre,
+            apellidoPaterno: this.state.apellidoPaterno,
+            username: this.state.username,
+            password: this.state.password
+        }
+        APIInvoker.invokePUT('/users/update',userUpDate,data=>{
+            alert(data.message)
+        },err => {
+            alert(err.message + err.error)
+        })
 
+        e.preventDefault()
     }
 
     render() {
@@ -69,10 +74,10 @@ class DatosUsuario extends React.Component {
                             <div className="container-fluid form-group">
                                 <div className="row">
                                     <div className="col">
-                                        <input type="text" className="form-control inpnombre" placeholder="Nombre"/>
+                                        <input type="text" className="form-control inpnombre" placeholder={this.state.nombre}/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" className="form-control inpape" placeholder="Apellido"/>
+                                        <input type="text" className="form-control inpape" placeholder={this.state.apellido}/>
                                     </div><br/>
 
                                 </div>
@@ -80,16 +85,16 @@ class DatosUsuario extends React.Component {
                             <div className="container-fluid form-group">
                                 <div className="row">
                                     <div className="col">
-                                        <input type="text" className="form-control inpcorreo" placeholder="Correo"/>
+                                        <input type="text" className="form-control inpcorreo" placeholder={this.state.username}/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" className="form-control inpcontra" placeholder="Contraseña"/>
+                                        <input type="text" className="form-control inpcontra" placeholder="Nueva contraseña"/>
                                     </div><br/>
 
                                 </div>
                             </div><br/><br/>
                             <div className="container-fluid ">
-                                <button type="button" className="btn btn-outline-info">Guardar cambios</button>
+                                <button type="button" className="btn btn-outline-info" onClick={this.actualizarDatos.bind(this)} >Guardar cambios</button>
                             </div><br/>
                             <Link to='/home'>
                                 <div className="container-fluid ">

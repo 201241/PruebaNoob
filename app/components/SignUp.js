@@ -57,10 +57,10 @@ class SignUp extends React.Component {
             alert(error.message + error.error)
         })
 
-        if (this.status && this.usernameOk) {
+/*        if (this.status && this.usernameOk) {
 
         } else
-            this.messageError.innerHTML = 'Los campos marcados con * son obligatorios'
+            this.messageError.innerHTML = 'Los campos marcados con * son obligatorios'*/
         e.preventDefault()
     }
 
