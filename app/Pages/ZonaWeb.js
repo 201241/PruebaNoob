@@ -101,6 +101,10 @@ class ZonaWeb extends React.Component {
                             </div>
                         </div>
                     </nav>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <For each="item" index="index" of={this.state.lista} >
                         <Card key={index} title={item.titulo} description={item.comentario}/>
                     </For>
