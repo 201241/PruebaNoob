@@ -53,6 +53,7 @@ class SignUp extends React.Component {
         APIInvoker.invokePOST('/users/signup',user,data=>{
             alert(data.message)
             this.usernameOk = false
+            this.props.history.push('/login')
         }, error => {
             alert(error.message + error.error)
         })

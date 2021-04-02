@@ -1,9 +1,9 @@
 import React from 'react'
-import CardGeneral from "../components/CardGeneral";
+import Card from "../components/Card";
 import {Link} from "react-router-dom";
 import update from "immutability-helper";
 import APIInvoker from "../utils/APIInvoker";
-class ZonaWeb extends React.Component {
+class ZonaDiseñoDeInterfaces extends React.Component {
 //SVG porn
 
     constructor(props) {
@@ -12,11 +12,12 @@ class ZonaWeb extends React.Component {
             lista : [],
             Jsonlista:[]
         }
+
     }
 //     /publicar/getAllWeb
 //     /publicar/getAllBD
     componentDidMount() {
-        APIInvoker.invokeGET("/publicar/getAllPublicacionWeb", data => {
+        APIInvoker.invokeGET("/publicar/getAllPublicacionDiseno", data => {
 
             this.setState({
                 lista: data.body
@@ -54,7 +55,7 @@ class ZonaWeb extends React.Component {
                                         </li>
                                     </Link>
                                     <li className="nav-item active">
-                                        <a className="nav-link" href="#">Programación Web<span className="sr-only">(current)</span></a>
+                                        <a className="nav-link" href="#">Diseño de interface <span className="sr-only">(current)</span></a>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#">Temas</a>
@@ -105,7 +106,7 @@ class ZonaWeb extends React.Component {
                     <br/>
                     <br/>
                     <For each="item" index="index" of={this.state.lista} >
-                        <CardGeneral key={index} title={item.titulo} description={item.comentario}/>
+                        <Card key={index} title={item.titulo} description={item.comentario}/>
                     </For>
                     </body>
 
@@ -115,7 +116,7 @@ class ZonaWeb extends React.Component {
     }
 }
 //npm install -save bootstrap@4.6.0
-export default ZonaWeb;
+export default ZonaDiseñoDeInterfaces;
 
 /*
 

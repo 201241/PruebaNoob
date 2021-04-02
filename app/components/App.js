@@ -9,6 +9,9 @@ import Publicar from "../Pages/Publicar";
 import ZonaWeb from "../Pages/ZonaWeb";
 import DatosUsuario from "./DatosUsuario";
 import ZonaBaseDeDatos from "../Pages/ZonaBaseDeDatos";
+import ZonaDiseñoDeInterfaces from "../Pages/ZonaDiseñoDeInterfaces";
+import Header from "./Header";
+import ContenidoPerfil from "../Pages/ContenidoPerfil";
 
 class App extends React.Component{
     render() {
@@ -24,6 +27,10 @@ class App extends React.Component{
                     <Route exact path='/Zonaweb' component={ZonaWeb}/>
                     <Route exact path='/ZonaBaseDeDatos' component={ZonaBaseDeDatos}/>
                     <Route exact path='/DatosUsuario' component={DatosUsuario}/>
+                    <Route exact path='/ZonaDiseñoDeInterfaces' component={ZonaDiseñoDeInterfaces}/>
+                    <Route exact path='/Header' component={Header}/>
+                    <Route exact path='/ContenidoPerfil' component={ContenidoPerfil}/>
+
                     <Route component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>

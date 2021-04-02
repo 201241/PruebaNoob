@@ -38,6 +38,15 @@ class APIInvoker {//
         this.invoke(url,okCallbak,failCallback,params)
     }
 
+    invokeDELETE(url, body, okCallbak, failCallback){
+        let params = {
+            method: 'DELETE',
+            headers: this.getAPIHeader(),
+        }
+
+        this.invoke(url,okCallbak,failCallback,params)
+    }
+
     invoke(url,okCallback, failCallback,params){
         if (debug) {
             console.log('Invoke => ' + params.method + ':' + url)

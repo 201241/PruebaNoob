@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import Header from "../components/Header";
 class Home extends React.Component {
     render() {
 
@@ -9,7 +10,76 @@ class Home extends React.Component {
                 <div className="container-fluid text-center">
                 </div>
                 <header>
-                    <nav className="navbar navbar-expand-lg  navbar-dark bg-dark  fixed-top">
+                    <Header/>
+                </header><br/><br/>
+                <div class="container">
+                </div><br/><br/>
+
+                <body>
+                <div>
+                </div>
+                <div className="row row-cols-1 row-cols-md-2 g-4">
+                    <div className="col">
+                        <div className="card c1">
+                            <img src="./Imagenes/Web.png" className="card-img-top" alt="..."/>
+                                <div className="card-body container-fluid">
+                                    <Link to='/zonaweb'>
+                                        <h5 className="card-title">Programación Web</h5>
+                                    </Link>
+                                    <p className="card-text">La sección para programación web, está diseñada para brindarte recursos que puedas necesitar a lo largo de tu cuatrimestre. </p>
+                                </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="card c2">
+                            <img src="./Imagenes/BD.jpg" className="card-img-top" alt="..."/>
+                                <div className="card-body">
+                                    <Link to='/ZonaBaseDeDatos'>
+                                        <h5 className="card-title">Base de Datos</h5>
+                                    </Link>
+
+                                    <p className="card-text">Esta sección está hecha para que encuentres libros, referencias, ejemplos, etc. Acerca de base de datos.</p>
+                                </div>
+                        </div>
+                    </div><br/>
+                    <div className="col"><br/><br/>
+                        <div className="card">
+                            <img src="./Imagenes/DI.jpg" className="card-img-top" alt="..."/>
+                                <div className="card-body">
+                                    <Link to='/ZonaDiseñoDeInterfaces'>
+                                        <h5 className="card-title">Diseño de interfaces</h5>
+                                    </Link>
+                                    <p className="card-text">This is a longer card with supporting text below as a
+                                        natural lead-in to additional content.</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div className="col"><br/><br/>
+                        <div className="card">
+                            <img src="./Imagenes/Mate.jpg" className="card-img-top" alt="..."/>
+                                <div className="card-body">
+                                    <h5 className="card-title">Matemáticas</h5>
+                                    <p className="card-text">This is a longer card with supporting text below as a
+                                        natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                </body>
+                <br/>
+            </>
+        )
+    }
+}
+
+//npm install -save bootstrap@4.6.0
+export default Home;
+
+
+
+/*
+
+<nav className="navbar navbar-expand-lg  navbar-dark bg-dark  fixed-top">
                         <button className="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -52,63 +122,6 @@ class Home extends React.Component {
                             </form>
                         </div>
                     </nav>
-                </header><br/><br/>
-                <div class="container">
-                </div><br/><br/>
 
-                <body>
-                <div>
-                </div>
-                <div className="row row-cols-1 row-cols-md-2 g-4">
-                    <div className="col">
-                        <div className="card c1">
-                            <img src="./Imagenes/Web.png" className="card-img-top" alt="..."/>
-                                <div className="card-body container-fluid">
-                                    <Link to='/zonaweb'>
-                                        <h5 className="card-title">Programación Web</h5>
-                                    </Link>
-                                    <p className="card-text">La sección para programación web, está diseñada para brindarte recursos que puedas necesitar a lo largo de tu cuatrimestre. </p>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card c2">
-                            <img src="./Imagenes/BD.jpg" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <Link to='/ZonaBaseDeDatos'>
-                                        <h5 className="card-title">Base de Datos</h5>
-                                    </Link>
 
-                                    <p className="card-text">Esta sección está hecha para que encuentres libros, referencias, ejemplos, etc. Acerca de base de datos.</p>
-                                </div>
-                        </div>
-                    </div><br/>
-                    <div className="col"><br/><br/>
-                        <div className="card">
-                            <img src="./Imagenes/DI.jpg" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                        <h5 className="card-title">Diseño de interfaces</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a
-                                        natural lead-in to additional content.</p>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col"><br/><br/>
-                        <div className="card">
-                            <img src="./Imagenes/Mate.jpg" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Matemáticas</h5>
-                                    <p className="card-text">This is a longer card with supporting text below as a
-                                        natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                </body>
-                <br/>
-            </>
-        )
-    }
-}
-//npm install -save bootstrap@4.6.0
-export default Home;
+ */

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import APIInvoker from "../utils/APIInvoker";
+import update from "immutability-helper";
 class DatosUsuario extends React.Component {
 
     constructor() {//
@@ -18,10 +19,20 @@ class DatosUsuario extends React.Component {
         this.usernameOk = false
     }
 
+
+    changeField(e) {
+        let field = e.target.name
+        let value = e.target.value
+
+        this.setState(update(this.state,{
+            [field] : {$set : value}
+        }))
+    }
+
     iniciarDatos(){
 
         let idUser = window.localStorage.getItem("idUser");
-        alert("si al metodo")
+        //alert("si al metodo")
         APIInvoker.invokeGET(`/users/getDatos/${idUser}`,(data) => {
             this.setState({
                 nombre: data.body.nombre,
@@ -42,7 +53,7 @@ class DatosUsuario extends React.Component {
             nombre: this.state.nombre,
             apellidoPaterno: this.state.apellidoPaterno,
             username: this.state.username,
-            password: this.state.password
+            //password: this.state.password
         }
         APIInvoker.invokePUT('/users/update',userUpDate,data=>{
             alert(data.message)
@@ -74,10 +85,10 @@ class DatosUsuario extends React.Component {
                             <div className="container-fluid form-group">
                                 <div className="row">
                                     <div className="col">
-                                        <input type="text" className="form-control inpnombre" placeholder={this.state.nombre}/>
+                                        <input type="text" className="form-control inpnombre" id='nombre' name='nombre' value={this.state.nombre} onChange={this.changeField.bind(this)} placeholder={this.state.nombre}/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" className="form-control inpape" placeholder={this.state.apellido}/>
+                                        <input type="text" className="form-control inpape" id='apellido' name='apellido' value={this.state.apellido} onChange={this.changeField.bind(this)} placeholder={this.state.apellido}/>
                                     </div><br/>
 
                                 </div>
@@ -85,7 +96,7 @@ class DatosUsuario extends React.Component {
                             <div className="container-fluid form-group">
                                 <div className="row">
                                     <div className="col">
-                                        <input type="text" className="form-control inpcorreo" placeholder={this.state.username}/>
+                                        <input type="text" class="form-control inpcorreo" id='username' name='username' value={this.state.username} placeholder={this.state.username} onChange={this.changeField.bind(this)}/>
                                     </div>
                                     <div className="col">
                                         <input type="text" className="form-control inpcontra" placeholder="Nueva contraseña"/>
