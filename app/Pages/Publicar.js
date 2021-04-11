@@ -36,7 +36,6 @@ class Publicar extends React.Component {
         this.setState(update(this.state,{
             [field] : {$set : value}
         }))
-
     }
 
     Publicar(e){

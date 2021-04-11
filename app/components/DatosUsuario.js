@@ -11,8 +11,6 @@ class DatosUsuario extends React.Component {
             apellido : '',
             username : ''
         }
-
-
         this.iniciarDatos()
 
         this.status = false

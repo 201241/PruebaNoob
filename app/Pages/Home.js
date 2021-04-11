@@ -1,8 +1,31 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import Header from "../components/Header";
+import SearchPage from "../components/SearchPage";
+import CardGeneral from "../components/CardGeneral";
 class Home extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            titulo :'',
+            comentario :''
+        }
+
+    }
+
+    eventReturnFinish(response){
+        alert(response.titulo + "en home")
+        this.state.titulo = response.titulo;
+        this.state.comentario = response.comentario
+    }
+
     render() {
+        let card
+        if(this.state.titulo===''){
+            card = '';
+        }else{
+            card = <CardGeneral title={this.state.titulo} description={this.state.comentario} />
+        }
 
         return(
             <>
@@ -11,8 +34,10 @@ class Home extends React.Component {
                 </div>
                 <header>
                     <Header/>
+                    <SearchPage onResponse={this.eventReturnFinish.bind(this)} />
+                    {card}
                 </header><br/><br/>
-                <div class="container">
+                <div className="container">
                 </div><br/><br/>
 
                 <body>
