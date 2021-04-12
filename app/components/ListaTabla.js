@@ -7,8 +7,8 @@ class ListaTabla extends React.Component {
     }
 
     entrar(){
-        alert("entra al titulo " + this.props.title.titulo);
-        alert("contenido: "+ this.props.title.comentario);
+        //alert("entra al titulo " + this.props.title.titulo);
+        //alert("contenido: "+ this.props.title.comentario);
 
         this.props.onResponse(this.props.title);
     }

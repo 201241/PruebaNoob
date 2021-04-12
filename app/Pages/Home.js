@@ -3,18 +3,34 @@ import {Link} from "react-router-dom";
 import Header from "../components/Header";
 import SearchPage from "../components/SearchPage";
 import CardGeneral from "../components/CardGeneral";
+import APIInvoker from "../utils/APIInvoker";
 class Home extends React.Component {
     constructor() {
         super();
+        //this.componentDid_Mount();
         this.state = {
             titulo :'',
-            comentario :''
+            comentario :'',
+            lista : []
         }
 
     }
 
+/*    componentDid_Mount() {
+        alert("entra iniciar home");
+        APIInvoker.invokeGET("/publicar/getAllPublicacionWeb", data => {
+            this.setState({
+                lista: data.body
+            })
+            //alert("entra iniciar home");
+            console.log(this.state.lista.length + "<__ Lista search*")
+        }, error=>{
+
+        })
+    }*/
+
     eventReturnFinish(response){
-        alert(response.titulo + "en home")
+        //alert(response.titulo + "en home")
         this.state.titulo = response.titulo;
         this.state.comentario = response.comentario
     }
@@ -27,6 +43,11 @@ class Home extends React.Component {
             card = <CardGeneral title={this.state.titulo} description={this.state.comentario} />
         }
 
+
+        for(let i=0; i<this.state.lista.length; i++){
+            //alert(this.state.lista[i].titulo + " render");
+        }
+
         return(
             <>
                 <link rel="stylesheet" href="./CSS/Home.css"/>
@@ -34,7 +55,7 @@ class Home extends React.Component {
                 </div>
                 <header>
                     <Header/>
-                    <SearchPage onResponse={this.eventReturnFinish.bind(this)} />
+                    <SearchPage title={this.state.lista} onResponse={this.eventReturnFinish.bind(this)} />
                     {card}
                 </header><br/><br/>
                 <div className="container">

@@ -6,12 +6,12 @@ import ListaTabla from "./ListaTabla";
 class SearchPage extends React.Component {
     constructor(props) {
         super(props);
-        this.componentDid_Mount();
         this.state  = {
             searchWord:'',
             lista : [],
             encontrado : []
         }
+        this.componentDid_Mount();
     }
 
     changeField_(e){
@@ -24,37 +24,58 @@ class SearchPage extends React.Component {
     }
 
     componentDid_Mount() {
+        //alert("apiiin")
         APIInvoker.invokeGET("/publicar/getAllPublicacionWeb", data => {
             this.setState({
                 lista: data.body
             })
             console.log(this.state.lista + "<__ Lista search*")
         }, error=>{
-
+            console.log("error")
         })
+        //alert("apiiin end")
     }
 
-    search(){
+    search(e){
+        e.preventDefault();
+        //alert("fin")
+        //this.state.lista = this.props.title;
+        this.state.encontrado = [];
+        //this.componentDid_Mount();
         let pos;
+        let arrayAux=[];
         for (let i=0; i<this.state.lista.length; i++){
             pos = this.state.lista[i].titulo.indexOf(this.state.searchWord);
             if(pos!=-1){
-                this.state.encontrado.push(this.state.lista[i]);
-                console.log(this.state.lista[i].titulo.toString() + "<< encontrado")
+                arrayAux.push(this.state.lista[i]) //console.log(this.state.lista[i].titulo.toString() + "<< encontrado")
             }
         }
-        alert("end search");
+        this.setState({
+            encontrado : arrayAux
+        })
+
+        //alert(arrayAux.length + " aa sd estaaa");
+        //alert(this.state.encontrado.length + "estaaa");
+
+        //alert("end search");
         for (let j=0; j<this.state.encontrado.length; j++){
-            alert(this.state.encontrado[j].titulo);
+            console.log(this.state.encontrado[j].titulo + " title");
         }
+        //alert("end rec search");
+
     }
 
     eventReturn(response){
-        alert(response.titulo + "<< title")
+        //alert(response.titulo + "<< title")
         this.props.onResponse(response);
     }
 
     render() {
+      //alert(this.state.encontrado.length + "<long")
+        for(let i=0; i<this.state.encontrado.length; i++){
+            //alert(this.state.encontrado[i].titulo + " render");
+        }
+
         return(
             <React.Fragment>
                 <div>
@@ -71,13 +92,9 @@ class SearchPage extends React.Component {
                         </nav>
                         <p className="card-text letras"> </p>
                     </div>
-                    {
-                        //para que agarre de nuevo, hay que cambiar a array (lista y viceverza)
-                    }
                     <For each="item" index="index" of={this.state.encontrado}>
                         <ListaTabla key={index} title={item} onResponse={this.eventReturn.bind(this)}/>
                     </For>
-
 
                 </div>
             </React.Fragment>
@@ -85,7 +102,3 @@ class SearchPage extends React.Component {
     }
 };
 export default SearchPage;
-
-
-
-
