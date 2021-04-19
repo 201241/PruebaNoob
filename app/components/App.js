@@ -12,6 +12,8 @@ import ZonaBaseDeDatos from "../Pages/ZonaBaseDeDatos";
 import ZonaDiseñoDeInterfaces from "../Pages/ZonaDiseñoDeInterfaces";
 import Header from "./Header";
 import ContenidoPerfil from "../Pages/ContenidoPerfil";
+import SideBar from "./SideBar";
+import Footer from "./Footer";
 
 class App extends React.Component{
     render() {
@@ -31,6 +33,8 @@ class App extends React.Component{
                     <Route exact path='/Header' component={Header}/>
                     <Route exact path='/ContenidoPerfil' component={ContenidoPerfil}/>
 
+                    <Route exact path='/Side' component={SideBar}/>
+                    <Route exact path='/Foo' component={Footer}/>
                     <Route component={NotFound}></Route>
                 </Switch>
             </BrowserRouter>
