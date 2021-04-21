@@ -33,9 +33,10 @@ class Card extends React.Component {
                         <div className="modal-content border-0 ">
                             <div className="col-12">
                                 <div className="card tarjeta">
-                                    <h5 className="card-header text-center fondoheader">{this.props.title}</h5>
 
-                                    <button type="button" className="btn btn-danger" onClick={this.EliminarPub.bind(this)}>Eliminar</button>
+                                    <h5 className="card-header text-center fondoheader">{this.props.title} <div className="container-fluid belim">
+                                        <button type="button" className="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar publicacion" onClick={this.EliminarPub.bind(this)}>X</button>
+                                    </div></h5>
 
                                     <div className="card-body">
                                         <p className="card-text letras">{this.props.description}</p>
@@ -54,13 +55,22 @@ class Card extends React.Component {
 
 export default Card;
 
-/*<div className="row row-cols-1 row-cols-md-2 g-4 my-0">
-    <div className="col">
-        <div className="card">
-            <div className="card-body">
-                <h5 className="card-title">{this.props.title}</h5>
-                <p className="card-text">{this.props.description}</p>
-            </div>
-        </div>
-    </div>
-</div>*/
+/*<div className="modal-dialog ">
+                    <link rel="stylesheet" href="./CSS/Card.css"/>
+                    <div className="col-sm-12">
+                        <div className="modal-content border-0 ">
+                            <div className="col-12">
+                                <div className="card tarjeta">
+
+                                    <h5 className="card-header text-center fondoheader">Featured <div className="container-fluid belim">
+                                        <button type="button" className="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar publicacion">X</button>
+                                    </div></h5>
+                                    <div className="card-body">
+                                        <p className="card-text letras">With supporting text below as a natural lead-in to additional
+                                            content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*/

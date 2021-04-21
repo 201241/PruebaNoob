@@ -6,14 +6,17 @@ class NotFound extends React.Component {
 
         return(
             <>
-                <h1> No existe la ruta</h1>
-                <Link to='/'>
-                    <h2>Volver al inicio </h2>
-                </Link>
+                <body>
+                        <img src="Imagenes/NF.jpg" className="img-fluid mx-auto d-block"/>
+                        <div className="container-fluid text-center">
+                            <Link to='/Home'>
+                                <button type="button" className="btn btn-outline-warning ">Regresar</button>
+                            </Link>
+                        </div>
+                </body>
 
             </>
         )
     }
 }
-
 export default NotFound;
