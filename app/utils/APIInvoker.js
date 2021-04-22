@@ -44,7 +44,6 @@ class APIInvoker {//
     }
 
     invokePOSTimg(url, body, okCallbak, failCallback){
-        console.log('body ==>',body)
         let params = {
             method: 'POST',
             headers: this.getAPIHeaderImg(),

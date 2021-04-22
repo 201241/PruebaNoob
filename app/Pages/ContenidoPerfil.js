@@ -24,7 +24,7 @@ class ContenidoPerfil extends React.Component {
             console.log(this.state.lista + "<__ Lista")
         }, error => {
             alert("si llega no sirve")
-            alert(data.body)
+            //alert(data.body)
         })
     }
 

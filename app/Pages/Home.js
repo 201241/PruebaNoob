@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import SearchPage from "../components/SearchPage";
 import CardGeneral from "../components/CardGeneral";
 import APIInvoker from "../utils/APIInvoker";
+import {Fade} from "reactstrap";
+import Footer from "../components/Footer";
 class Home extends React.Component {
     constructor() {
         super();
@@ -34,6 +36,7 @@ class Home extends React.Component {
         this.state.titulo = response.titulo;
         this.state.comentario = response.comentario
     }
+
 
     render() {
         let card
@@ -112,6 +115,9 @@ class Home extends React.Component {
                     </div>
                 </div>
                 </body>
+                <footer>
+                    <Footer/>
+                </footer>
                 <br/>
             </>
         )
