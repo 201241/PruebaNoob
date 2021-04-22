@@ -6,7 +6,12 @@ class APIInvoker {//
     getAPIHeader(){
         return({
             'Content-Type': 'application/json',
-            //authorization: window.localStorage.getItem('token')
+            authorization: window.localStorage.getItem('token')
+        })
+    }
+    getAPIHeaderImg(){
+        return({
+            authorization: window.localStorage.getItem('token')
         })
     }
 
@@ -33,6 +38,17 @@ class APIInvoker {//
             method: 'POST',
             headers: this.getAPIHeader(),
             body: JSON.stringify(body)
+        }
+
+        this.invoke(url,okCallbak,failCallback,params)
+    }
+
+    invokePOSTimg(url, body, okCallbak, failCallback){
+        console.log('body ==>',body)
+        let params = {
+            method: 'POST',
+            headers: this.getAPIHeaderImg(),
+            body: body
         }
 
         this.invoke(url,okCallbak,failCallback,params)
