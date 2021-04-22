@@ -42,7 +42,7 @@ class ContenidoPerfil extends React.Component {
 
                 <div>
                     <For each="item" index="index" of={this.state.lista} >
-                        <Card key={index} title={item.titulo} description={item.comentario} Id_publicacion={item.Id_publicacion}/>
+                        <Card key={index} title={item.titulo} description={item.comentario} Id_publicacion={item.Id_publicacion} doc={item.doc} />
                     </For>
                 </div>
             </div>

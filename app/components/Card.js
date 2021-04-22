@@ -38,6 +38,13 @@ class Card extends React.Component {
                                         <button type="button" className="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar publicacion" onClick={this.EliminarPub.bind(this)}>X</button>
                                     </div></h5>
 
+                                    <If condition={this.props.doc}>
+                                        <img src={'http://localhost:3000'+this.props.doc} className="card-img-top" />
+                                    </If>
+                                    <If condition={this.props.doc === null}>
+                                        <img src={'http://localhost:3000/uploads/predeterminado.jpg'} className="card-img-top" />
+                                    </If>
+
                                     <div className="card-body">
                                         <p className="card-text letras">{this.props.description}</p>
                                         <p className="card-text"><small className="text-muted"></small></p>
