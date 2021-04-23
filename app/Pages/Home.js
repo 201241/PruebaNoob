@@ -59,15 +59,22 @@ class Home extends React.Component {
                 </div>
                 <header>
                     <Header/>
+                    <div className="modal-dialog">
+                        <div className="col-sm-12">
+                            <div className="modal-content prueba">
+                                <div className="col-12">
+                                    <img src="./Imagenes/mapas1.jpg"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <SearchPage title={this.state.lista} onResponse={this.eventReturnFinish.bind(this)} />
                     {card}
-                </header><br/><br/>
+                </header>
                 <div className="container">
-                </div><br/><br/>
+                </div>
 
                 <body>
-                <div>
-                </div>
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     <div className="col">
                         <div className="card c1">
@@ -108,7 +115,9 @@ class Home extends React.Component {
                         <div className="card">
                             <img src="./Imagenes/Mate.jpg" className="card-img-top" alt="..."/>
                                 <div className="card-body">
-                                    <h5 className="card-title">Matemáticas</h5>
+                                    <Link to='/ZonaMatematicas'>
+                                        <h5 className="card-title">Matemáticas</h5>
+                                    </Link>
                                     <p className="card-text">This is a longer card with supporting text below as a
                                         natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>

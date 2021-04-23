@@ -25,7 +25,7 @@ class SearchPage extends React.Component {
 
     componentDid_Mount() {
         //alert("apiiin")
-        APIInvoker.invokeGET("/publicar/getAllPublicacionWeb", data => {
+        APIInvoker.invokeGET("/publicar/getAllPublicacion", data => {
             this.setState({
                 lista: data.body
             })

@@ -1,13 +1,12 @@
 import React from 'react'
-import Card from "../components/Card";
+import CardGeneral from "../components/CardGeneral";
 import {Link} from "react-router-dom";
 import update from "immutability-helper";
 import APIInvoker from "../utils/APIInvoker";
 import Header from "../components/Header";
 import SearchPage from "../components/SearchPage";
 import Footer from "../components/Footer";
-import CardGeneral from "../components/CardGeneral";
-class ZonaDiseñoDeInterfaces extends React.Component {
+class ZonaMatematicas extends React.Component {
 //SVG porn
 
     constructor(props) {
@@ -16,12 +15,11 @@ class ZonaDiseñoDeInterfaces extends React.Component {
             lista : [],
             Jsonlista:[]
         }
-
     }
 //     /publicar/getAllWeb
 //     /publicar/getAllBD
     componentDidMount() {
-        APIInvoker.invokeGET("/publicar/getAllPublicacionDiseno", data => {
+        APIInvoker.invokeGET("/publicar/getAllPublicacionMatematicas", data => {
 
             this.setState({
                 lista: data.body
@@ -47,7 +45,7 @@ class ZonaDiseñoDeInterfaces extends React.Component {
                         <div className="col-sm-12">
                             <div className="modal-content prueba">
                                 <div className="col-12">
-                                    <img src="./Imagenes/DiseñoInter.jpg"/>
+                                    <img src="./Imagenes/Mates.jpg"/>
                                 </div>
                             </div>
                         </div>
@@ -59,21 +57,10 @@ class ZonaDiseñoDeInterfaces extends React.Component {
                     </body>
                     <br/>
                     <Footer/>
-
                 </div>
 
         )
     }
 }
 //npm install -save bootstrap@4.6.0
-export default ZonaDiseñoDeInterfaces;
-
-/*
-
-                     <div className="container">
-                         <Link to='/publicar'>
-                             <h6 className='text-center'>publicar</h6>
-                         </Link>
-                     </div>
-
- */
+export default ZonaMatematicas;

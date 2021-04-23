@@ -41,11 +41,16 @@ class ZonaWeb extends React.Component {
                         <Header/>
                     </header>
                     <body>
+                    <div className="modal-dialog">
+                        <div className="col-sm-12">
+                            <div className="modal-content prueba">
+                                <div className="col-12">
+                                    <img src="./Imagenes/ProgramacionWeb.jpg"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <SearchPage/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
                     <For each="item" index="index" of={this.state.lista} >
                         <CardGeneral key={index} title={item.titulo} description={item.comentario} doc={item.doc}/>
                     </For>

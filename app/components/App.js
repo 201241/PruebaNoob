@@ -14,6 +14,7 @@ import Header from "./Header";
 import ContenidoPerfil from "../Pages/ContenidoPerfil";
 import SideBar from "./SideBar";
 import Footer from "./Footer";
+import ZonaMatematicas from "../Pages/ZonaMatematicas";
 //import Card1 from "./Card1";
 
 class App extends React.Component{
@@ -33,6 +34,7 @@ class App extends React.Component{
                     <Route exact path='/ZonaDiseñoDeInterfaces' component={ZonaDiseñoDeInterfaces}/>
                     <Route exact path='/Header' component={Header}/>
                     <Route exact path='/ContenidoPerfil' component={ContenidoPerfil}/>
+                    <Route exact path='/ZonaMatematicas' component={ZonaMatematicas}/>
 
                     <Route exact path='/Side' component={SideBar}/>
                     <Route exact path='/Foo' component={Footer}/>
