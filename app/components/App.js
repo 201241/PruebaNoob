@@ -14,7 +14,7 @@ import Header from "./Header";
 import ContenidoPerfil from "../Pages/ContenidoPerfil";
 import SideBar from "./SideBar";
 import Footer from "./Footer";
-import Card1 from "./Card1";
+//import Card1 from "./Card1";
 
 class App extends React.Component{
     render() {
@@ -33,7 +33,7 @@ class App extends React.Component{
                     <Route exact path='/ZonaDiseñoDeInterfaces' component={ZonaDiseñoDeInterfaces}/>
                     <Route exact path='/Header' component={Header}/>
                     <Route exact path='/ContenidoPerfil' component={ContenidoPerfil}/>
-                    <Route exact path='/Card' component={Card1}/>
+
                     <Route exact path='/Side' component={SideBar}/>
                     <Route exact path='/Foo' component={Footer}/>
                     <Route component={NotFound}></Route>

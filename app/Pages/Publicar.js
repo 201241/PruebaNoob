@@ -8,21 +8,34 @@ import Header from "../components/Header";
 
 class Publicar extends React.Component {
 
-    constructor() {//
-        super()
+    constructor(props) {//
+        super(props)
         this.state  = {
-            seccion:'',
-            titulo : '',
-            comentario : '',
-            doc : ''
+            seccion:null,
+            titulo :null,
+            comentario :null,
+            doc : null
         }
         this.status = false
         this.usernameOk = false
-
-
     }
 
     changeField(e) {
+        let field = e.target.name
+        let value = e.target.value
+        let type = e.target.type
+
+        if(type === 'file')
+            this.setState(update(this.state,{
+                doc : {$set : e.target.files[0]}
+            }))
+        else
+            this.setState(update(this.state,{
+            [field] : {$set : value}
+            }))
+    }
+
+    changeField2(e) {
         this.setState({
             seccion: e.target.value
 
@@ -39,24 +52,24 @@ class Publicar extends React.Component {
     }
 
     Publicar(e){
-        this.messageError.innerHTML = ''
+        e.preventDefault()
+        const data = new FormData();
         let idUserP = window.localStorage.getItem("idUser");
-            let publicar = {
-                idUser: idUserP,
-                seccion: this.state.seccion,
-                titulo: this.state.titulo,
-                comentario: this.state.comentario,
-                doc: this.state.doc
-            }
+        data.append('idUser', idUserP)
+        data.append('seccion', this.state.seccion)
+        data.append('titulo', this.state.titulo)
+        data.append('comentario', this.state.comentario)
+        data.append('doc', this.state.doc);
 
-            APIInvoker.invokePOST('/publicar/addPublicacion',publicar,data=>{
+        this.messageError.innerHTML = ''
+
+            APIInvoker.invokePOSTimg('/publicar/addPublicacion',data,data=>{
+                document.getElementById('resultado').innerHTML = 'registro creado exitosamente'
                 alert(data.message)
-                this.usernameOk = false
             }, error => {
-                alert(error.message + error.error)
+                document.getElementById('resultado').innerHTML = data
             })
 
-        e.preventDefault()
     }
 
     render(){
@@ -83,7 +96,7 @@ class Publicar extends React.Component {
                                 </div><br/><br/>
                                 <form onSubmit={this.Publicar.bind(this)}>
                                     <div>
-                                        <select class="custom-select seccion"  name="seccion" id="seccion" value={this.state.seccion} onChange={this.changeField.bind(this)}>
+                                        <select className="custom-select seccion"  name="seccion" id="seccion" value={this.state.seccion} onChange={this.changeField2.bind(this)}>
                                             <option selected>Elige una sección</option>
                                             <option value="programacion web">programacion web</option>
                                             <option value="base de datos">Base de Datos</option>
@@ -106,12 +119,11 @@ class Publicar extends React.Component {
                                         </textarea>
                                     </div><br/>
                                     <div className="custom-file buscar">
-                                        <input type="file" className="custom-file-input" id="customFileLang" lang="es"/>
+                                        <input onChange={this.changeField.bind(this)} type="file" className="custom-file-input" id="customFileLang" lang="es"/>
                                         <label className="custom-file-label" htmlFor="customFileLang">Seleccionar Archivo</label>
                                     </div><br/><br/>
-                                    <button type="button" className="btn btn-outline-success"onClick={this.Publicar.bind(this)}>Subir publicacion</button>
+                                    <button type="button" className="btn btn-outline-success" onClick={this.Publicar.bind(this)}>Subir publicacion</button>
                                     <div ref={self => this.messageError = self}></div><br/><br/>
-
                                 </form>
                             </div>
                         </div>
