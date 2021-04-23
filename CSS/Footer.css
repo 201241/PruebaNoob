@@ -1,8 +1,17 @@
-.correo p
+
+footer
 {
-    margin-left: -40px;
+    width: 100%;
+
 }
-.tele
+.hola
 {
-    margin-left: -300px;
+    width: 100%;
+
 }
+
+/*
+div.container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
+}*/
