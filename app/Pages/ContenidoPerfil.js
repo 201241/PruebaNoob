@@ -2,6 +2,7 @@ import React from 'react'
 import APIInvoker from "../utils/APIInvoker";
 import Card from "../components/Card";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class ContenidoPerfil extends React.Component {
 
@@ -45,6 +46,8 @@ class ContenidoPerfil extends React.Component {
                         <Card key={index} title={item.titulo} description={item.comentario} Id_publicacion={item.Id_publicacion} doc={item.doc} />
                     </For>
                 </div>
+                <br/>
+                <Footer/>
             </div>
         )
 

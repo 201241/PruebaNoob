@@ -35,6 +35,7 @@ class Home extends React.Component {
         //alert(response.titulo + "en home")
         this.state.titulo = response.titulo;
         this.state.comentario = response.comentario
+        this.state.doc = response.doc
     }
 
 
@@ -43,7 +44,7 @@ class Home extends React.Component {
         if(this.state.titulo===''){
             card = '';
         }else{
-            card = <CardGeneral title={this.state.titulo} description={this.state.comentario} />
+            card = <CardGeneral title={this.state.titulo} description={this.state.comentario} doc={this.state.doc} />
         }
 
 
@@ -115,10 +116,9 @@ class Home extends React.Component {
                     </div>
                 </div>
                 </body>
-                <footer>
-                    <Footer/>
-                </footer>
                 <br/>
+
+                <Footer/>
             </>
         )
     }

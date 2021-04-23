@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import APIInvoker from "../utils/APIInvoker";
 import update from "immutability-helper";
+import Header from "./Header";
+import Footer from "./Footer";
 class DatosUsuario extends React.Component {
 
     constructor() {//
@@ -66,6 +68,7 @@ class DatosUsuario extends React.Component {
 
         return(
             <>
+                <Header/>
                 <div className="modal-dialog text-center">
                     <link rel="stylesheet" href="./CSS/Datos.css"/>
                     <div className="col-sm-12">
@@ -115,6 +118,10 @@ class DatosUsuario extends React.Component {
                         </div>
                     </div>
                 </div>
+                <br/>
+                <br/>
+                <br/>
+                <Footer/>
             </>
 
         )

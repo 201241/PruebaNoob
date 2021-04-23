@@ -16,7 +16,7 @@ class Card extends React.Component {
         }, error => {
             alert(error.message )
         })
-        window.location.replace('');
+        //window.location.replace('');
         /*
         window.location.href = window.location.href;
         // or

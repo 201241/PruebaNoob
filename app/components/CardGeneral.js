@@ -15,6 +15,14 @@ class CardGeneral extends React.Component {
                             <div className="col-12">
                                 <div className="card tarjeta">
                                     <h5 className="card-header text-center fondoheader">{this.props.title}</h5>
+
+                                    <If condition={this.props.doc}>
+                                        <img src={'http://localhost:3000'+this.props.doc} className="card-img-top" />
+                                    </If>
+                                    <If condition={this.props.doc === null}>
+                                        <img src={'http://localhost:3000/uploads/predeterminado.jpg'} className="card-img-top" />
+                                    </If>
+
                                     <div className="card-body">
                                         <p className="card-text letras">{this.props.description}</p>
                                     </div>

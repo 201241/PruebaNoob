@@ -5,6 +5,7 @@ import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
 import Home from "./Home";
 import {Link} from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Publicar extends React.Component {
 
@@ -129,6 +130,8 @@ class Publicar extends React.Component {
                         </div>
                     </div>
                 </div>
+                <br/>
+                <Footer/>
 
             </div>
         )
